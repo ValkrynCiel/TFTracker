@@ -8,7 +8,7 @@ import './App.css';
 const Summoner = {
   "id": "H8BXrqn9K-8wVgWABpdE3bHIEUMp4LjnEnlENVG-DjYf25o",
   "accountId": "Vlywm7DXrrrjlb4f85QtFMmen4UKNCwgcSIUAh_jELBRjcE",
-  "puuid": "zimTooGz8LCa7S7JZLHhcLqUDEtKlyJ2-TfNZOp0BQSsH6tTt6sEnoXQXhVy1RilJuKbEg6CDVp4tw",
+  "puuid": "FhyFN92y-CLvtRFLApYknDCVe9hWmuPR5AFo3bAqDCnZjSNMTpleXbStmlGpqa-bc6EWXYCNMx4_uA",
   "name": "VaIkryn",
   "profileIconId": 4507,
   "revisionDate": 1587703556000,

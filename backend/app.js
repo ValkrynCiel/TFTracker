@@ -7,26 +7,35 @@ require('dotenv').config()
 
 const Summoner = require('./classes/Summoner');
 const API = require('./classes/API');
-const Match = require('./classes/Match')
+const Match = require('./classes/Match');
 
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.get('/testing', async function (req, res, next) {
+  // TEST: typeOf method console.logs Summoner, Summoner passed in from app.js, and equality
+  new Match().typeOf(Summoner)
+  new Summoner().typeOf(Summoner)
+  console.log('in app.js - Summoner', typeof Summoner)
+  return res.json({ message: 'test' });
+})
+
 app.get('/summoners/by-name', async function (req, res, next) {
-  let summoner = await new Summoner().fetch({ name: req.query.name});
-  await summoner.fetchMatchHistoryInfo()
-  return res.json({ summoner });
+  // let summoner = await new Summoner().fetch({ name: req.query.name});
+  // await summoner.fetchMatchHistoryInfo()
+  // return res.json({ summoner });
 })
 
-app.get('/summoners/by-puuid', async function (req, res, next) {
-  let summoner = await API.fetchSummonerByPUUID(req.query.puuid)
-  return res.json({ summoner });
-})
+// app.get('/summoners/by-puuid', async function (req, res, next) {
+//   let summoner = await API.fetchSummonerByPUUID(req.query.puuid)
+//   return res.json({ summoner });
+// })
 
-app.get('/match-history', async function (req, res, next) {
-  let match = await new Match().fetch(req.query.puuid);
-  return res.json({match})
+app.get('/match-info', async function (req, res, next) {
+  // let match = await new Match().fetch(req.query.puuid);
+  // match.fetchSummonerDetails()
+  // return res.json({ match })
 })
 
 app.use(function (req, res, next) {
