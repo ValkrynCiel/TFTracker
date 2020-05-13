@@ -1,5 +1,7 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
+
 
 const ExpressError = require('./expressError');
 
@@ -12,6 +14,7 @@ const Match = require('./classes/Match');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 app.get('/testing', async function (req, res, next) {
   // TEST: typeOf method console.logs Summoner, Summoner passed in from app.js, and equality

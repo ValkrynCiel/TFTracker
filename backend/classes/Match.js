@@ -14,15 +14,30 @@ class Match {
     let { match_id: id, participants: summonerIds } = data.metadata;
     let { game_variation: galaxy, participants: outcome } = data.info;
     let match = new Match({ id, summonerIds, galaxy, outcome });
+    match._sortDetails()
     return match;
   }
 
-  static typeOf(cls) {
-    console.log('in Match - cls', typeof cls)
-    console.log('in Match - Summoner', typeof Summoner)
-    console.log('in Match - equality', cls === Summoner)
-    console.log(typeof Match, "Match is a class?")
+  _sortDetails() {
+    this.outcome.forEach(detail => {
+      detail.units.sort((a,b) => {
+      if (a.tier < b.tier) return 1;
+      if (a.tier > b.tier) return -1;
+      if (a.rarity < b.rarity) return 1;
+      if (a.rarity > b.rarity) return -1;
+      return 0;
+      });
+
+      detail.traits.sort((a, b) => {
+        if (a.style < b.style) return 1;
+        if (a.style > b.style) return -1;
+        if (a.num_units < b.num_units) return 1;
+        if (a.num_units > b.num_units) return -1;
+        return 0;
+      })
+    });
   }
+
 
   async fetchSummonerDetails() {
     let promises = this.summonerIds.map(puuid => API.fetchSummonerByPUUID(puuid));
