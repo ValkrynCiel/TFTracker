@@ -9,7 +9,7 @@ import getChampionReference from './helper';
 const reference = getChampionReference();
 
 const ChampionContainer = styled.div`
-  margin: 10px 5px;
+  margin: 5px;
   display: inline-block;
   width: 40px;
   vertical-align: middle;

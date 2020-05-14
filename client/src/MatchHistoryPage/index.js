@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import Match from './Match'
+import MatchHistory from './MatchHistory';
 
 export default class MatchHistoryPage extends Component {
   constructor(props) {
@@ -27,8 +27,8 @@ export default class MatchHistoryPage extends Component {
       isLoading ? <h1>Loading</h1> :
       <>
       <h1>{summoner.name}</h1>
-      <h2>{summoner.profileIconId}</h2>
-      {summoner.matchHistory.map(m => <Match key={m.matchId} info={m.match}/>)}
+      <img src={`https://cdn.communitydragon.org/latest/profile-icon/${summoner.profileIconId}`} style={{display: 'inline-block'}} />
+      <MatchHistory matchHistory={summoner.matchHistory} />
       </>
     )
   }
