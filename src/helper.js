@@ -1,6 +1,8 @@
 const JSON_URL = 'http://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/companions.json';
 const IMG_BASE_URL = 'http://raw.communitydragon.org/pbe/game/assets/characters'
 
+let companionArr;
+
 /** fetch JSON from url and convert into array
  */
 async function fetchCompanionData () {
@@ -27,20 +29,14 @@ function getImgSrc (str) {
   return `${IMG_BASE_URL}/pet${dir}/hud/icon_${endPoint}`;
 }
 
-function sortParticipantRanking(p) {
-  return p.sort((a, b) => a.placement - b.placement);
-}
 
 /** accepts data from Riot Games API and returns an array of image srcs */
-export async function getCompanionPortraitSrcs(participants) {
+export async function getCompanionPortraitSrc(id) {
+  companionArr = companionArr || await fetchCompanionData();
 
-  let companionArr = await fetchCompanionData();
-  let sorted = sortParticipantRanking(participants);
+  let companion = companionArr.find(({ contentId }) => contentId === id);
 
-  return sorted.map(({ companion: { content_ID: searchId }}) => {
-    let companion = companionArr.find(({ contentId }) => contentId === searchId);
-    return getImgSrc(companion.loadoutsIcon);
-  });
+  return getImgSrc(companion.loadoutsIcon);
 }
     
 

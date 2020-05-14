@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 
 const ItemImage = styled.img`
-  display:block;
+  display: block;
   border-radius: 10%;
   margin: 1px;
   height: 12px;
