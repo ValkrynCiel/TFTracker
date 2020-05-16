@@ -13,12 +13,16 @@ const MATCH_BASE_URL = 'https://americas.api.riotgames.com/tft/';
 class API {
   
   static async fetchSummonerByName(name) {
-    let resp = await axios.get(
-        `${SUMMONER_BASE_URL}summoner/v1/summoners/by-name/${name}`, 
-        CONFIG
-      );
-
-    return resp.data;
+    try {
+      let resp = await axios.get(
+          `${SUMMONER_BASE_URL}summoner/v1/summoners/by-name/${name}`, 
+          CONFIG
+        );
+  
+      return resp.data;
+    } catch (e) {
+      throw e
+    }
   }
 
   static async fetchSummonerByPUUID(puuid) {

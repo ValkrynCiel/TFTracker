@@ -41,11 +41,16 @@ class Summoner {
     let ids = [ ...this.matchIds ];
     let promises = ids.map(id => Match.fetch(id));
     let matches = await Promise.all(promises);
-    this.matchHistory = matches.map(m => {
+    this.matchHistory = matches.map(({
+      datetime, duration, galaxy, id, details
+    }) => {
       return (
-        {
-          matchId: m.id,
-          match: m.outcome.find(p => p.puuid === this.puuid)
+        { 
+          datetime, 
+          duration,
+          galaxy, 
+          id,
+          details: details.find(p => p.puuid === this.puuid)
         }
       );   
     })    

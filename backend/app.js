@@ -41,6 +41,8 @@ app.get('/summoners/search-by-match', async function (req, res, next) {
 app.get('/match/details', async function (req, res, next) {
   let match = await Match.fetch(req.query.puuid);
   await match.fetchSummonerDetails()
+  console.log(match.datetime)
+  console.log('hello')
   return res.json({ match })
 })
 
