@@ -12,7 +12,10 @@ const BG = styled.div`
   height: 39px;
   width: 36px;
   background-size: cover;
-  background-position: ${props => `calc(${100/5*(props.rank+1)}% - 1px) 0;`} 
+  background-position: ${props => {
+    let index = props.rank + 1;
+    return "calc(" + 100/5*index + "% - 1px) 0;" 
+  }}
   display: inline-flex;
   margin: 2px;
   img {
@@ -23,24 +26,26 @@ const BG = styled.div`
   }
 `
 
-
-//2: bronze
-//3: silver
-//4: gold
-//5: chromatic
-
 const TD = styled.td`
-  padding: 15px;
+  padding: 7px 15px;
   &.units {
-    width: 350px;
+    width: 300px;
     text-align: left;
   }
   &.traits {
-    width: 150px;
+    width: 120px;
     text-align: center;
   }
   span {
     display: block;
+    text-align: left;
+    font-size: 12px;
+  }
+  &:first-child {
+    padding-left: 30px;
+  }
+  &:last-child {
+    padding-right: 30px;
   }
 `
 
@@ -56,34 +61,33 @@ class Match extends Component {
     super(props);
     this.state = {
       src: null,
-      timerId: null,
-      timeFromNow: null
+      timeFromNow: moment(new Date(this.props.datetime)).fromNow()
     }
   }
 
   async componentDidMount() {
     let { details, datetime } = this.props;
     let src = await getCompanionPortraitSrc(details.companion.content_ID)
-    let timerId = setInterval(() => {
+    this.timerId = setInterval(() => {
       this.setState({
         timeFromNow: moment(new Date(datetime)).fromNow()
       })
       }, 60000);
 
     this.setState({
-      src,
-      timerId,
-      timeFromNow: moment(new Date(datetime)).fromNow()
+      src
     })
   }
 
   toCardinal(num) {
     const Rank = styled.h2`
       color: ${props => {
-        if (props.num === 1) return 'green';
-        if (props.num < 5) return 'blue';
-        return 'gray'
-      }}
+        if (props.num === 1) return '#2ed14c';
+        if (props.num < 5) return '#2473f2';
+        return '#bac4d4'
+      }};
+      text-align: left;
+      margin-top: 0px;
     `
     let ranking;
 
@@ -98,11 +102,11 @@ class Match extends Component {
   getMinutesAndSeconds(){
     let dur = moment.duration(this.props.duration, 'seconds')
 
-    return `${dur.minutes()}m${dur.seconds()}s`
+    return `${dur.minutes()}m ${dur.seconds()}s`
   } 
 
   componentWillUnmount() {
-    clearInterval(this.state.timerId);
+    clearInterval(this.timerId);
   }
 
   render() {
@@ -111,14 +115,14 @@ class Match extends Component {
       <tr>
         <TD>
           {this.toCardinal(placement)}
+          <span>{this.state.timeFromNow}</span>
+          <span>{this.getMinutesAndSeconds()}</span>
+          <span>{galaxies[this.props.galaxy]}</span>
         </TD>
         <TD>
           { this.state.src ?
           <CompanionImg src={this.state.src}/> :
-          'default' }
-          <span>{this.state.timeFromNow}</span>
-          <span>{this.getMinutesAndSeconds()}</span>
-          <span>{galaxies[this.props.galaxy]}</span>
+          'loading' }
         </TD>
         <TD className='units'>
           {units.map((u, i)=> 
