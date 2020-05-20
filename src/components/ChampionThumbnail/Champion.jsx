@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const colors = {
@@ -9,7 +9,7 @@ const colors = {
   4: "#FEC430"
 }
 
-const Champion = styled.img`
+const Img = styled.img`
   display: block;
   max-width: 100%;
   position: relative;
@@ -18,10 +18,8 @@ const Champion = styled.img`
   box-sizing: border-box;
 `
 
-export default class ChampionImage extends Component {
-  render() {
-    return (
-      <Champion rarity={this.props.rarity} src={this.props.src} />
-    );
-  }
+export const Champion = (props) => {
+  return (
+    <Img rarity={props.rarity} src={props.src} />
+  );
 }

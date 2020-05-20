@@ -1,59 +1,24 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import moment from 'moment';
-import ChampionThumbnail from '../ChampionThumbnail';
-import {getCompanionPortraitSrc} from '../../helper';
-import traitImg from '../../assets/set3/traits/bg.png';
-import {galaxies} from './galaxyInfo';
+import { Link } from 'react-router-dom';
+import { ChampionThumbnail } from '../../components/ChampionThumbnail';
+import { TD } from '../../components/TD';
+import { Trait } from '../../components/Trait';
+import { Companion } from '../../components/Companion';
+import { getCompanionPortraitSrc } from '../../helper';
+import { galaxies } from './galaxyInfo';
 
-const BG = styled.div`
-  background-image: url(${traitImg});
-  background-repeat: no-repeat;
-  height: 39px;
-  width: 36px;
-  background-size: cover;
-  background-position: ${props => {
-    let index = props.rank + 1;
-    return "calc(" + 100/5*index + "% - 1px) 0;" 
-  }}
-  display: inline-flex;
-  margin: 2px;
-  img {
-    margin: auto;
-    display: block;
-    width: 32px;
-    height: 32px;
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+  &:visited {
+    text-decoration: none;
+    color: inherit;
   }
-`
-
-const TD = styled.td`
-  padding: 7px 15px;
-  &.units {
-    width: 300px;
-    text-align: left;
+  &:hover {
+    color: blue;
   }
-  &.traits {
-    width: 120px;
-    text-align: center;
-  }
-  span {
-    display: block;
-    text-align: left;
-    font-size: 12px;
-  }
-  &:first-child {
-    padding-left: 30px;
-  }
-  &:last-child {
-    padding-right: 30px;
-  }
-`
-
-const CompanionImg = styled.img`
-  margin: auto;
-  height: 50px;
-  width: 50px;
-  display: block;
 `
 class Match extends Component {
 
@@ -114,14 +79,16 @@ class Match extends Component {
     return (
       <tr>
         <TD>
-          {this.toCardinal(placement)}
-          <span>{this.state.timeFromNow}</span>
-          <span>{this.getMinutesAndSeconds()}</span>
-          <span>{galaxies[this.props.galaxy]}</span>
+          <StyledLink to={`/match/na/${this.props.id}`}>
+            {this.toCardinal(placement)}
+            <span>{this.state.timeFromNow}</span>
+            <span>{this.getMinutesAndSeconds()}</span>
+            <span>{galaxies[this.props.galaxy]}</span>
+          </StyledLink>
         </TD>
         <TD>
           { this.state.src ?
-          <CompanionImg src={this.state.src}/> :
+          <Companion src={this.state.src}/> :
           'loading' }
         </TD>
         <TD className='units'>
@@ -138,13 +105,12 @@ class Match extends Component {
         <TD className='traits'>
           {traits.map((t, i)=> 
             t.style ?
-            <BG
+            <Trait
               key={i} 
               num={t.num_units}
               rank={t.style}
-            >
-              <img src= {require(`../../assets/set3/traits/${t.name.replace('Set3_', '').toLowerCase()}.png`)}/>
-            </BG> : null
+              name={t.name}
+            /> : null
           )} 
         </TD>
       </tr>
