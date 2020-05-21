@@ -29,9 +29,9 @@ export default class MatchHistoryPage extends Component {
       isLoading ? <h1>Loading</h1> :
       <>
       <div style= {{textAlign: 'left', margin: 'auto', maxWidth: '700px'}}>
-        <h1 style={{display: 'inline-block', margin: '0 0 0 30px'}}>{match.galaxy}</h1>
+        <h1 style={{display: 'inline-block', margin: '0 0 0 30px'}}>{match.details.galaxy}</h1>
       </div>
-      <MatchDetails details={match.details} />
+      <MatchDetails participants={match.details.participants} />
       </>
     )
   }

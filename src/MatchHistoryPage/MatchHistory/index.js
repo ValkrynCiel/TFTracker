@@ -16,13 +16,16 @@ export const MatchHistory = (props)=> {
       <tbody>
         {props.matchHistory.map(({ 
           id, 
-          details, 
-          datetime, 
-          duration,
-          galaxy }) => <Match
+          details: { 
+            datetime, 
+            duration, 
+            galaxy, 
+            participants
+          }  
+        }) => <Match
             id={id}
             key={id} 
-            details={details}
+            details={participants[0]}
             datetime={datetime}
             duration={duration}
             galaxy={galaxy}

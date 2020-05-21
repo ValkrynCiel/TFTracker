@@ -31,8 +31,8 @@ export default class MatchHistoryPage extends Component {
         <Banner>
           {isLoading ? null :
           <>
-            <img src={`https://cdn.communitydragon.org/latest/profile-icon/${summoner.profileIconId}`} style={{display: 'inline-block', height: '100px', width: '100px'}} />
-            <h1 style={{display: 'inline-block', margin: '0 0 0 30px', color: 'white'}}>{summoner.name}</h1>
+            <img src={`https://cdn.communitydragon.org/latest/profile-icon/${summoner.profile.profileIconId}`} style={{display: 'inline-block', height: '100px', width: '100px'}} />
+            <h1 style={{display: 'inline-block', margin: '0 0 0 30px', color: 'white'}}>{summoner.profile.name}</h1>
           </>}
         </Banner>
         {isLoading ? <h1>Loading</h1> : 
