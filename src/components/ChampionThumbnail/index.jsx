@@ -31,7 +31,7 @@ const ItemContainer = styled.div`
 export const ChampionThumbnail = (props) => {
   const { tier, id, rarity, items } = props;
   let championName = id.replace('TFT3_', '').toLowerCase();
-  
+
   return (
     <Wrapper>
       <ChampionContainer>
@@ -44,5 +44,3 @@ export const ChampionThumbnail = (props) => {
     </Wrapper>
   );
 };
-
-export default ChampionThumbnail;

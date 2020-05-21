@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, BrowserRouter, Switch, Redirect } from 'react-router-dom';
 import MatchHistoryPage from './MatchHistoryPage';
+import MatchDetailsPage from './MatchDetailsPage';
 import './App.css';
 
 function App() {
@@ -8,10 +9,10 @@ function App() {
       <div className="App">
         <BrowserRouter>
           <Switch>
-            <Route exact path='/summoner/na/:name'
+            <Route exact path='/na/summoner/:name'
                   render={rtp => <MatchHistoryPage {...rtp} />} />
-            <Route exact path='/match/na/:id'
-                  render={rtp => <h1>{() => rtp.id}</h1>} />
+            <Route exact path='/na/match/:id'
+                  render={rtp => <MatchDetailsPage {...rtp} />} />
             <Route exact path='/teambuilder'
                   render={() => <h1>Teambuilder</h1>} />
             <Route exact path='/champions'

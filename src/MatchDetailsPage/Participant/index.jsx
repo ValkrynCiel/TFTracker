@@ -6,8 +6,11 @@ import { ChampionThumbnail } from '../../components/ChampionThumbnail';
 import { TD } from '../../components/TD';
 import { Trait } from '../../components/Trait';
 import Companion from '../../components/Companion';
-import { galaxies } from './galaxyInfo';
 
+const ProfileImg = styled.img`
+  width: 50px;
+  height: 50px;
+`
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: inherit;
@@ -19,23 +22,28 @@ const StyledLink = styled(Link)`
     color: blue;
   }
 `
-export default class Match extends Component {
+export default class Partipant extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      timeFromNow: moment(new Date(this.props.datetime)).fromNow()
+      companionSrc: null,
+      summonerSrc: null
     }
   }
 
-  async componentDidMount() {
-    let { details, datetime } = this.props;
-    this.timerId = setInterval(() => {
-      this.setState({
-        timeFromNow: moment(new Date(datetime)).fromNow()
-      })
-      }, 60000);
-  }
+  // async componentDidMount() {
+  //   let src = await getCompanionPortraitSrc(details.companion.content_ID)
+  //   this.timerId = setInterval(() => {
+  //     this.setState({
+  //       timeFromNow: moment(new Date(datetime)).fromNow()
+  //     })
+  //     }, 60000);
+
+  //   this.setState({
+  //     src
+  //   })
+  // }
 
   toCardinal(num) {
     const Rank = styled.h2`
@@ -44,8 +52,7 @@ export default class Match extends Component {
         if (props.num < 5) return '#2473f2';
         return '#bac4d4'
       }};
-      text-align: left;
-      margin-top: 0px;
+      margin: auto;
     `
     let ranking;
 
@@ -57,40 +64,52 @@ export default class Match extends Component {
     return <Rank num={num}>{ranking}</Rank>;
   }
 
-  getMinutesAndSeconds(){
-    let dur = moment.duration(this.props.duration, 'seconds')
+  // getMinutesAndSeconds(){
+  //   let dur = moment.duration(this.props.duration, 'seconds')
 
-    return `${dur.minutes()}m ${dur.seconds()}s`
-  } 
+  //   return `${dur.minutes()}m ${dur.seconds()}s`
+  // } 
 
-  componentWillUnmount() {
-    clearInterval(this.timerId);
+  // componentWillUnmount() {
+  //   clearInterval(this.timerId);
+  // }
+  displayLastRound(num) {
+    let start = num - 4;
+    return `${(Math.ceil(start/7)) + 1}-${start%7}`
   }
-
   render() {
     let { 
       placement, 
-      units, 
-      traits, 
+      gold_left, 
+      last_round, 
       level, 
-      companion: { species, skin_ID } 
-    } = this.props.details;
+      traits, 
+      units,
+      name, 
+      profileIconId,
+      companion: { species, skin_ID }
+    } = this.props;
+
     return (
       <tr>
         <TD>
-          <StyledLink to={`/na/match/${this.props.id}`}>
-            {this.toCardinal(placement)}
-            <span>{this.state.timeFromNow}</span>
-            <span>{this.getMinutesAndSeconds()}</span>
-            <span>{galaxies[this.props.galaxy]}</span>
+          {this.toCardinal(placement)}
+        </TD>
+        <TD>
+          <StyledLink to={`/na/summoner/${name}`}>
+            <ProfileImg src = {`https://cdn.communitydragon.org/latest/profile-icon/${profileIconId}`} />
+            <div>{name}</div>
           </StyledLink>
+        </TD>
+        <TD>
+          {this.displayLastRound(last_round)}
         </TD>
         <TD>
           <Companion 
             species={species} 
-            skinId={skin_ID}
-            level={level} 
-          />
+            skinId={skin_ID} 
+            level={level}
+          /> 
         </TD>
         <TD className='units'>
           {units.map((u, i)=> 
@@ -113,6 +132,9 @@ export default class Match extends Component {
               name={t.name}
             /> : null
           )} 
+        </TD>
+        <TD>
+          {gold_left}
         </TD>
       </tr>
     )

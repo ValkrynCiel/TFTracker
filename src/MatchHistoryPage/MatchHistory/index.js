@@ -32,5 +32,3 @@ export const MatchHistory = (props)=> {
     </Table>
   )
 }
-
-export default MatchHistory;

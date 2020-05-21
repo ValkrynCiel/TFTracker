@@ -15,10 +15,4 @@ export const TD = styled.td`
     text-align: left;
     font-size: 12px;
   }
-  &:first-child {
-    padding-left: 30px;
-  }
-  &:last-child {
-    padding-right: 30px;
-  }
 `
