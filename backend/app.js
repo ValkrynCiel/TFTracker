@@ -16,22 +16,26 @@ app.use(cors());
 app.get('/summoners/search-by-name', async function (req, res, next) {
   console.log(req.query.name)
   let summoner = await Summoner.fetch(req.query.name);
-  await summoner.fetchMatchHistoryInfo()
+  await Promise.all([
+    summoner.fetchRankedData(),
+    summoner.fetchMatchHistoryInfo()
+  ]);
   return res.json({ summoner });
 })
 
 app.get('/summoners/search-by-match', async function (req, res, next) {
   let { name, puuid, profileIconId } = req.query;
   debugger
-  let summoner = new Summoner({ name, puuid, profileIconId });
-  summoner.fetchMatchHistoryInfo();
+  let summoner = await new Summoner({ name, puuid, profileIconId });
+  await summoner.fetchMatchHistoryInfo();
 
   return res.json({ summoner });
 })
 
 app.get('/match/details', async function (req, res, next) {
   let match = await Match.fetch(req.query.id);
-  await match.fetchSummonerDetails()
+  await match.fetchParticipantDetails();
+
   return res.json({ match })
 })
 

@@ -5,39 +5,50 @@ class Match {
     id, 
     summonerIds, 
     galaxy, 
-    details, 
+    participants, 
     datetime, 
     duration 
   }) {
     this.id = id,
     this.summonerIds = summonerIds,
-    this.galaxy = galaxy,
-    this.details = details,
-    this.datetime = datetime,
-    this.duration = duration
+    this.details = {
+      galaxy,
+      datetime,
+      duration,
+      participants
+    }
   };
 
   static async fetch(mId) {
-    let data = await API.fetchMatchById(mId);
-    let { match_id: id, participants: summonerIds } = data.metadata;
-    let { 
-      game_variation: galaxy, 
-      participants: details, 
-      game_datetime: datetime, 
-      game_length: duration } = data.info;
-    let match = new Match({ id, summonerIds, galaxy, details, datetime, duration });
-    match._sortDetails()
+    let {
+      metadata: 
+      {
+        match_id: id, 
+        participants: summonerIds
+      },
+      info: 
+      {
+        game_variation: galaxy, 
+        participants: participants, 
+        game_datetime: datetime, 
+        game_length: duration
+      }
+    } = await API.fetchMatchById(mId);
+
+    let match = new Match({ id, participants, summonerIds, galaxy, datetime, duration });
+
     return match;
   }
 
-  _sortDetails() {
+  _sortParticipantDetails() {
+    let { participants } = this.details;
     //sort by placement of each summoner ascending
-    this.details.sort((a,b) => a.placement - b.placement);
+    participants.sort((a,b) => a.placement - b.placement);
 
     //sort unites and traits descending
-    this.details.forEach((d, i) => {
+    participants.forEach((d, i) => {
       this.summonerIds[i] = d.puuid;
-      
+
       d.units.sort((a,b) => {
       if (a.tier < b.tier) return 1;
       if (a.tier > b.tier) return -1;
@@ -57,14 +68,15 @@ class Match {
   }
 
 
-  async fetchSummonerDetails() {
+  async fetchParticipantDetails() {
     let promises = this.summonerIds.map(puuid => API.fetchSummonerByPUUID(puuid));
-    let summoners = await Promise.all(promises);
-    summoners.forEach(({ name, profileIconId }, i) => {
-      let info = this.details[i];
-      info.name = name;
-      info.profileIconId = profileIconId;
+    let participants = await Promise.all(promises);
+    participants.forEach(({ name, profileIconId }, i) => {
+      let p = this.details.participants[i];
+      p.name = name;
+      p.profileIconId = profileIconId;
     });
+    this._sortParticipantDetails();
   }
 }
 

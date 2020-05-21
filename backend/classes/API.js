@@ -1,4 +1,5 @@
 const axios = require('axios');
+const expressError = require('../expressError');
 
 const CONFIG = {
   headers: {
@@ -7,6 +8,7 @@ const CONFIG = {
 }
 
 const SUMMONER_BASE_URL = 'https://na1.api.riotgames.com/tft/';
+const RANKED_BASE_URL = 'https://na1.api.riotgames.com/tft/';
 const MATCH_BASE_URL = 'https://americas.api.riotgames.com/tft/';
 
 
@@ -33,6 +35,15 @@ class API {
       );
 
     return resp.data;
+  }
+
+  static async fetchRankedData(summonerId) {
+    let resp = await axios.get(
+      `${RANKED_BASE_URL}league/v1/entries/by-summoner/${summonerId}`,
+      CONFIG
+    );
+    // returns an array
+    return resp.data[0];
   }
 
   static async fetchMatchIds(puuid) {

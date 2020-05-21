@@ -1,56 +1,68 @@
 const API = require('./API');
 const Match = require('./Match');
+const ExpressError = require('../expressError')
 
 class Summoner {
-  constructor({ puuid, name, profileIconId }) {
-    this.puuid = puuid,
-    this.name = name,
-    this.profileIconId = profileIconId
+  constructor({ puuid, name, profileIconId, id, summonerLevel }) {
+    this.puuid = puuid;
+    this.profile = {
+      name,
+      profileIconId,
+      summonerLevel
+    }
+    this.ranked = {
+      id
+    }
   };
 
   static async fetch(name) {
     try {
-      let data = await API.fetchSummonerByName(name);
-
-      const summoner = new Summoner(data);
-  
+      let profileData = await API.fetchSummonerByName(name);
+      const summoner = new Summoner(profileData);
       return summoner;
     } catch (e) {
-      throw new ExpressError('Not found', 404);
+      throw new ExpressError(e.message, 404);
     }
   }
 
-  static typeOf(cls) {
-    console.log('in Summoner - cls', typeof cls)
-    console.log('in Summoner - Summoner',typeof Summoner)
-    console.log('in Summoner - equality', cls === Summoner)
-    console.log('Match is a class in Summoner?', typeof Match)
-  }
+  async fetchRankedData() {
+    let {
+      tier,
+      rank,
+      leaguePoints,
+      wins,
+      losses
+    } = await API.fetchRankedData(this.ranked.id);
 
-  async fetchMatchIds() {
-    try {
-      this.matchIds = await API.fetchMatchIds(this.puuid);
-    } catch (e) {
-      throw new ExpressError('Something went wrong', 400)
+    this.ranked = {
+      ...this.ranked,
+      tier,
+      rank,
+      leaguePoints,
+      wins,
+      losses
     }
   }
 
   async fetchMatchHistoryInfo() {
-    await this.fetchMatchIds();
+    this.matchIds = await API.fetchMatchIds(this.puuid);
     // will use slice later for pagination
     let ids = [ ...this.matchIds ];
     let promises = ids.map(id => Match.fetch(id));
     let matches = await Promise.all(promises);
     this.matchHistory = matches.map(({
-      datetime, duration, galaxy, id, details
+      id, 
+      details: { datetime, duration, galaxy, participants}
     }) => {
       return (
-        { 
-          datetime, 
-          duration,
-          galaxy, 
+        {  
           id,
-          details: details.find(p => p.puuid === this.puuid)
+          details: {
+            datetime, 
+            duration,
+            galaxy,
+            participants: [participants.find(p => p.puuid === this.puuid)]
+          }
         }
       );   
     })    
