@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { MatchDetails } from './MatchDetails';
 
+const BASE_URL = process.env.BASE_URL || 'http://localhost:3001';
+
 export default class MatchHistoryPage extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +14,7 @@ export default class MatchHistoryPage extends Component {
   }
 
   async componentDidMount() {
-    let resp = await axios.get('http://localhost:3001/match/details', 
+    let resp = await axios.get(`${BASE_URL}/match/details`, 
     {
       params: { id: this.props.match.params.id }
     });

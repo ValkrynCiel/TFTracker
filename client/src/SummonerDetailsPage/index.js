@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { MatchHistory } from './MatchHistory';
+import { RankedDetails } from './RankedDetails';
 import { Banner } from '../components/Banner';
+
+const BASE_URL = process.env.BASE_URL || 'http://localhost:3001';
 
 export default class MatchHistoryPage extends Component {
   constructor(props) {
@@ -13,7 +16,8 @@ export default class MatchHistoryPage extends Component {
   }
 
   async componentDidMount() {
-    let resp = await axios.get('http://localhost:3001/summoners/search-by-name', 
+    console.log(`${BASE_URL}/summoners/search-by-name`)
+    let resp = await axios.get(`${BASE_URL}/summoners/search-by-name`, 
     {
       params: { name: this.props.match.params.name }
     });
@@ -35,8 +39,11 @@ export default class MatchHistoryPage extends Component {
             <h1 style={{display: 'inline-block', margin: '0 0 0 30px', color: 'white'}}>{summoner.profile.name}</h1>
           </>}
         </Banner>
-        {isLoading ? <h1>Loading</h1> : 
-        <MatchHistory matchHistory={summoner.matchHistory} />}
+        {isLoading ? <h1>Loading</h1> :
+        <>
+        <RankedDetails {...summoner.ranked} /> 
+        <MatchHistory matchHistory={summoner.matchHistory} />
+        </>}
       </>
     )
   }
