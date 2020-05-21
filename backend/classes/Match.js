@@ -36,12 +36,12 @@ class Match {
     } = await API.fetchMatchById(mId);
 
     let match = new Match({ id, participants, summonerIds, galaxy, datetime, duration });
-
+    match._sort();
     return match;
   }
 
-  _sortParticipantDetails() {
-    let { participants } = this.details;
+  _sort() {
+    let participants = this.details.participants;
     //sort by placement of each summoner ascending
     participants.sort((a,b) => a.placement - b.placement);
 
@@ -76,7 +76,6 @@ class Match {
       p.name = name;
       p.profileIconId = profileIconId;
     });
-    this._sortParticipantDetails();
   }
 }
 
