@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, BrowserRouter, Switch, Redirect } from 'react-router-dom';
-import MatchHistoryPage from './MatchHistoryPage';
+import SummonerDetailsPage from './SummonerDetailsPage';
 import MatchDetailsPage from './MatchDetailsPage';
 import './App.css';
 
@@ -10,7 +10,7 @@ function App() {
         <BrowserRouter>
           <Switch>
             <Route exact path='/na/summoner/:name'
-                  render={rtp => <MatchHistoryPage {...rtp} />} />
+                  render={rtp => <SummonerDetailsPage {...rtp} />} />
             <Route exact path='/na/match/:id'
                   render={rtp => <MatchDetailsPage {...rtp} />} />
             <Route exact path='/teambuilder'

@@ -46,7 +46,7 @@ export default class Companion extends Component {
   }
 
   async componentDidMount() {
-    debugger
+
     let src = await getCompanionPortraitSrc(this.props.species, this.props.skinId);
     this.setState({
       src
