@@ -10,7 +10,7 @@ export const MatchDetails = (props)=> {
       <thead>
         <tr>
           <th>
-            <span>Rank</span>
+            <span>Ranking</span>
           </th>
           <th>
             <span>Summoner</span>
@@ -33,7 +33,7 @@ export const MatchDetails = (props)=> {
         </tr>
       </thead>
       <tbody>
-        {props.details.map(({puuid, ...rest}) => <Participant
+        {props.participants.map(({puuid, ...rest}) => <Participant
             key={puuid}
             {...rest}
           />
