@@ -1,5 +1,4 @@
 const API = require('./API');
-const Summoner = require('./Summoner');
 
 class Match {
   constructor({ 
@@ -18,8 +17,8 @@ class Match {
     this.duration = duration
   };
 
-  static async fetch(puuid) {
-    let data = await API.fetchMatchById(puuid);
+  static async fetch(mId) {
+    let data = await API.fetchMatchById(mId);
     let { match_id: id, participants: summonerIds } = data.metadata;
     let { 
       game_variation: galaxy, 
@@ -36,8 +35,9 @@ class Match {
     this.details.sort((a,b) => a.placement - b.placement);
 
     //sort unites and traits descending
-    this.details.forEach(d => {
-
+    this.details.forEach((d, i) => {
+      this.summonerIds[i] = d.puuid;
+      
       d.units.sort((a,b) => {
       if (a.tier < b.tier) return 1;
       if (a.tier > b.tier) return -1;

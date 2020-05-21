@@ -14,8 +14,9 @@ class API {
   
   static async fetchSummonerByName(name) {
     try {
+      let encoded = encodeURIComponent(name)
       let resp = await axios.get(
-          `${SUMMONER_BASE_URL}summoner/v1/summoners/by-name/${name}`, 
+          `${SUMMONER_BASE_URL}summoner/v1/summoners/by-name/${encoded}`, 
           CONFIG
         );
   
