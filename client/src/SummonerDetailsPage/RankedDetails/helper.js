@@ -1,7 +1,7 @@
-// export function formatTier(t) {
-//   let tier = t[0].toUpperCase() + t.slice(1);
-//   return tier;
-// }
+export function formatTier(t) {
+  let tier = t[0].toUpperCase() + t.slice(1);
+  return tier;
+}
 
 export function convertToEndpoint(tier, rank) {
 
