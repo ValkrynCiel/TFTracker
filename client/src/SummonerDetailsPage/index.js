@@ -4,7 +4,7 @@ import { MatchHistory } from './MatchHistory';
 import { RankedDetails } from './RankedDetails';
 import { Banner } from '../components/Banner';
 
-const BASE_URL = process.env.BASE_URL || 'http://localhost:3001';
+const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3001';
 
 export default class MatchHistoryPage extends Component {
   constructor(props) {

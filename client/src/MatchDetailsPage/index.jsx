@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { MatchDetails } from './MatchDetails';
 
-const BASE_URL = process.env.BASE_URL || 'http://localhost:3001';
+const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3001';
 
 export default class MatchHistoryPage extends Component {
   constructor(props) {
