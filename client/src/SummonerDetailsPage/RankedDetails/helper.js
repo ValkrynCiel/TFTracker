@@ -1,9 +1,9 @@
-function formatTier(t) {
+export function formatTier(t) {
   let tier = t[0].toUpperCase() + t.slice(1);
   return tier;
 };
 
-function formatEndpoint(tier, rank) {
+export function formatEndpoint(tier, rank) {
 
   let ref = {
     I: 1,
@@ -13,9 +13,4 @@ function formatEndpoint(tier, rank) {
   }
 
   return `${tier}_${ref[rank]}.png`;
-};
-
-module.exports = {
-  formatTier,
-  formatEndpoint
 };
