@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { convertToEndpoint, formatTier } from './helper';
+import { formatEndpoint, formatTier } from './helper';
 
 const Wrapper = styled.div`
   max-width: 400px;
@@ -48,7 +48,7 @@ export const RankedDetails = (props) => {
     <Wrapper>
       <Title><b>Ranked Statistics</b></Title>
       <Details>
-        {/* <Img src={require(`../../assets/ranks/${convertToEndpoint(tier, rank)}`)} /> */}
+        <Img src={require(`../../assets/ranks/${formatEndpoint(tier, rank)}`)} />
         <div>
         <h1>{`${formatTier(tier)} ${rank}`}</h1>
         <h4>LP: {leaguePoints}</h4>

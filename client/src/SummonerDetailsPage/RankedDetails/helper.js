@@ -3,7 +3,7 @@ export function formatTier(t) {
   return tier;
 }
 
-export function convertToEndpoint(tier, rank) {
+export function formatEndpoint(tier, rank) {
 
   let ref = {
     I: 1,
