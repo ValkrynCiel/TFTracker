@@ -1,5 +1,5 @@
-const JSON_URL = 'http://raw.communitydragon.org/pbe/game/data/characters';
-const IMG_BASE_URL = 'http://raw.communitydragon.org/latest/game'
+const JSON_URL = 'https://raw.communitydragon.org/pbe/game/data/characters';
+const IMG_BASE_URL = 'https://raw.communitydragon.org/latest/game'
 
 /** fetch JSON from url and convert into array
  */
