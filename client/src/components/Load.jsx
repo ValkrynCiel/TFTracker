@@ -11,7 +11,7 @@ const rotate = keyframes`
   }
 `;
 
-const Icon = styled.div`
+export const Load = styled.div`
   border: 4px solid #7086cc; 
   border-top: 4px solid white;
   border-radius: 50%;
@@ -20,9 +20,3 @@ const Icon = styled.div`
   margin: 50px auto;
   animation: 1s ${rotate} linear infinite;
 `
-
-export const Load = (props) => {
-  return (
-    <Icon />
-  )
-}

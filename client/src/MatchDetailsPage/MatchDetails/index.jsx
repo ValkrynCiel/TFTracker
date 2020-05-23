@@ -10,11 +10,11 @@ export const MatchDetails = (props)=> {
       <thead>
         <tr>
           <TH>Summoner</TH>
-          <TH>Last Round</TH>
+          <TH>Last<br/>Round</TH>
           <TH>Level</TH>
           <TH>Units</TH>
           <TH>Traits</TH>
-          <TH>Gold Left</TH>
+          <TH>Gold<br/>Remaining</TH>
         </tr>
       </thead>
       <tbody>

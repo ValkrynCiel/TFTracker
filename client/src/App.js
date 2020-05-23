@@ -6,8 +6,8 @@ import './App.css';
 
 function App() {
   return (
-    <>
-      <div className="App">
+    <div className="App">
+      <div className="view">
         <BrowserRouter>
           <Switch>
             <Route exact path='/na/summoner/:name'
@@ -23,9 +23,8 @@ function App() {
           </Switch>
         </BrowserRouter>
       </div>
-      <div className="background">
-      </div>
-    </>
+      <div className="background" />
+    </div>
   );
 }
 

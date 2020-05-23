@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import moment from 'moment';
-import { Link } from 'react-router-dom';
+import { StyledLink } from '../../components/StyledLink';
 import { ChampionThumbnail } from '../../components/ChampionThumbnail';
 import { TD } from '../../components/TD';
 import { Trait } from '../../components/Trait';
@@ -11,17 +11,6 @@ import { Coin } from '../../components/Coin';
 const ProfileImg = styled.img`
   width: 50px;
   height: 50px;
-`
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: inherit;
-  &:visited {
-    text-decoration: none;
-    color: inherit;
-  }
-  &:hover {
-    color: blue;
-  }
 `
 export default class Partipant extends Component {
 
@@ -95,7 +84,7 @@ export default class Partipant extends Component {
     return (
       <tr>
         <TD>
-          <StyledLink to={`/na/summoner/${name}`}>
+          <StyledLink to={`/na/summoner/${name}`} >
             {this.toCardinal(placement)}
             <ProfileImg src = {`https://cdn.communitydragon.org/latest/profile-icon/${profileIconId}`} />
             <div>{name}</div>
@@ -134,7 +123,7 @@ export default class Partipant extends Component {
           )} 
         </TD>
         <TD>
-          {gold_left} <Coin/>
+          {gold_left} <Coin src={require('../../assets/coin.png')}/>
         </TD>
       </tr>
     )

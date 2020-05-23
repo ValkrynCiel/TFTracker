@@ -1,24 +1,13 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import moment from 'moment';
-import { Link } from 'react-router-dom';
+import { StyledLink } from '../../components/StyledLink';
 import { ChampionThumbnail } from '../../components/ChampionThumbnail';
 import { TD } from '../../components/TD';
 import { Trait } from '../../components/Trait';
 import Companion from '../../components/Companion';
 import { galaxies } from './galaxyInfo';
 
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: inherit;
-  &:visited {
-    text-decoration: none;
-    color: inherit;
-  }
-  &:hover {
-    color: blue;
-  }
-`
 export default class Match extends Component {
 
   constructor(props) {
@@ -79,11 +68,11 @@ export default class Match extends Component {
     return (
       <tr>
         <TD>
-          <StyledLink to={`/na/match/${this.props.id}`}>
-            {this.toCardinal(placement)}
-            <span>{this.state.timeFromNow}</span>
-            <span>{this.getMinutesAndSeconds()}</span>
-            <span>{galaxies[this.props.galaxy]}</span>
+          <StyledLink to={`/na/match/${this.props.id}`} left={1}>
+              {this.toCardinal(placement)}
+              <span>{this.state.timeFromNow}</span>
+              <span>{this.getMinutesAndSeconds()}</span>
+              <span>{galaxies[this.props.galaxy]}</span>
           </StyledLink>
         </TD>
         <TD>

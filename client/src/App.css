@@ -18,14 +18,14 @@ body {
   z-index: 1;
 }
 
-.App {
+.view {
   height: 100vh;
   margin: auto;
   text-align: center;
   max-width: 1000px;
   background-color: #131C2E;
   overflow: scroll;
-  color: white;
+  color: rgb(187, 201, 224);
   position: relative;
   z-index: 2;
   font-family: 'Roboto', sans-serif;
