@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Load } from '../components/Load';
 import { MatchDetails } from './MatchDetails';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3001';
@@ -28,7 +29,7 @@ export default class MatchHistoryPage extends Component {
   render() {
     let {isLoading, match} = this.state;
     return(
-      isLoading ? <h1>Loading</h1> :
+      isLoading ? <Load /> :
       <>
       <div style= {{textAlign: 'left', margin: 'auto', maxWidth: '700px'}}>
         <h1 style={{display: 'inline-block', margin: '0 0 0 30px'}}>{match.details.galaxy}</h1>

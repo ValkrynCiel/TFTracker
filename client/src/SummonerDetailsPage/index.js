@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Load } from '../components/Load';
 import { MatchHistory } from './MatchHistory';
 import { RankedDetails } from './RankedDetails';
 import { Banner } from '../components/Banner';
@@ -39,7 +40,7 @@ export default class MatchHistoryPage extends Component {
             <h1 style={{display: 'inline-block', margin: '0 0 0 30px', color: 'white'}}>{summoner.profile.name}</h1>
           </>}
         </Banner>
-        {isLoading ? <h1>Loading</h1> :
+        {isLoading ? <Load /> :
         <>
         <RankedDetails {...summoner.ranked} /> 
         <MatchHistory matchHistory={summoner.matchHistory} />
