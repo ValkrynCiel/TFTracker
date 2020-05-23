@@ -1,6 +1,6 @@
 import React from 'react';
-import { Table } from '../../components/Table';
-import { TH } from '../../components/TH';
+import { Table } from '../../../components/Table';
+import { TH } from '../../../components/TH';
 import Participant from '../Participant';
 
 export const MatchDetails = (props)=> {

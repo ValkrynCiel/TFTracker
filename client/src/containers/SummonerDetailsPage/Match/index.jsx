@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import moment from 'moment';
-import { StyledLink } from '../../components/StyledLink';
-import { ChampionThumbnail } from '../../components/ChampionThumbnail';
-import { TD } from '../../components/TD';
-import { Trait } from '../../components/Trait';
-import Companion from '../../components/Companion';
+import { StyledLink } from '../../../components/StyledLink';
+import { ChampionThumbnail } from '../../../components/ChampionThumbnail';
+import { TD } from '../../../components/TD';
+import { Trait } from '../../../components/Trait';
+import Companion from '../../../components/Companion';
 import { galaxies } from './galaxyInfo';
 
 export default class Match extends Component {

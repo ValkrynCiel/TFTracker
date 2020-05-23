@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, BrowserRouter, Switch, Redirect } from 'react-router-dom';
-import SummonerDetailsPage from './SummonerDetailsPage';
-import MatchDetailsPage from './MatchDetailsPage';
+import SummonerDetailsPage from './containers/SummonerDetailsPage';
+import MatchDetailsPage from './containers/MatchDetailsPage';
 import './App.css';
 
 function App() {

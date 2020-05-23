@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import moment from 'moment';
-import { StyledLink } from '../../components/StyledLink';
-import { ChampionThumbnail } from '../../components/ChampionThumbnail';
-import { TD } from '../../components/TD';
-import { Trait } from '../../components/Trait';
-import Companion from '../../components/Companion';
-import { Coin } from '../../components/Coin';
+import { StyledLink } from '../../../components/StyledLink';
+import { ChampionThumbnail } from '../../../components/ChampionThumbnail';
+import { TD } from '../../../components/TD';
+import { Trait } from '../../../components/Trait';
+import Companion from '../../../components/Companion';
+import { Coin } from '../../../components/Coin';
 
 const ProfileImg = styled.img`
   width: 50px;
@@ -123,7 +123,7 @@ export default class Partipant extends Component {
           )} 
         </TD>
         <TD>
-          {gold_left} <Coin src={require('../../assets/coin.png')}/>
+          {gold_left} <Coin src={require('../../../assets/coin.png')}/>
         </TD>
       </tr>
     )

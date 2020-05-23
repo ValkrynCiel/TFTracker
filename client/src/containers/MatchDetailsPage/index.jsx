@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Load } from '../components/Load';
-import { Banner } from '../components/Banner';
+import { Load } from '../../components/Load';
+import { Banner } from '../../components/Banner';
 import { MatchDetails } from './MatchDetails';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3001';

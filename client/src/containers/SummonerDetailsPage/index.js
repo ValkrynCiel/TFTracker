@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Load } from '../components/Load';
+import { Load } from '../../components/Load';
 import { MatchHistory } from './MatchHistory';
 import { RankedDetails } from './RankedDetails';
-import { Banner } from '../components/Banner';
+import { Banner } from '../../components/Banner';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3001';
 

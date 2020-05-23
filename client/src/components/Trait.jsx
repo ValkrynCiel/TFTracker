@@ -14,6 +14,7 @@ const Wrapper = styled.div`
   }}
   display: inline-flex;
   margin: 2px;
+  position: relative;
   img {
     margin: auto;
     display: block;
@@ -22,11 +23,29 @@ const Wrapper = styled.div`
   }
 `
 
+const UnitCount = styled.div`
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: 2px solid black;
+  right: -5px;
+  bottom: -5px;
+  font-size: 12px;
+  background-color: black;
+  display: flex;
+  p {
+    display: block;
+    margin: auto;
+  }
+`
+
 export const Trait = (props) => {
   let fileName = props.name.replace('Set3_', '').toLowerCase();
   return (
     <Wrapper rank={ props.rank }>
       <img src= { require(`../assets/set3/traits/${fileName}.png`) }/>
+      <UnitCount><p>{props.num}</p></UnitCount>
     </Wrapper>
   )
 }
