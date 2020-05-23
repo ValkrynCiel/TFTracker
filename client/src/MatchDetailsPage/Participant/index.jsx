@@ -6,6 +6,7 @@ import { ChampionThumbnail } from '../../components/ChampionThumbnail';
 import { TD } from '../../components/TD';
 import { Trait } from '../../components/Trait';
 import Companion from '../../components/Companion';
+import { Coin } from '../../components/Coin';
 
 const ProfileImg = styled.img`
   width: 50px;
@@ -133,7 +134,7 @@ export default class Partipant extends Component {
           )} 
         </TD>
         <TD>
-          {gold_left}
+          {gold_left} <Coin/>
         </TD>
       </tr>
     )
