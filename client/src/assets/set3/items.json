@@ -1,218 +1,574 @@
 [
   {
-    "id": 1,
-    "name": "B.F. Sword"
-  },
+    "abbrev": "BF", 
+    "desc": "+15 Attack Damage", 
+    "id": 1, 
+    "id_str": "Icon_BFSword", 
+    "name": "B. F. Sword"
+  }, 
   {
-    "id": 2,
+    "abbrev": "Bow", 
+    "desc": "+15% Attack Speed", 
+    "id": 2, 
+    "id_str": "TFT_Item_RecurveBow", 
     "name": "Recurve Bow"
-  },
+  }, 
   {
-    "id": 3,
+    "abbrev": "Rod", 
+    "desc": "+20% Spell Power", 
+    "id": 3, 
+    "id_str": "Icon_NeedlesslyLargeRod", 
     "name": "Needlessly Large Rod"
-  },
+  }, 
   {
-    "id": 4,
+    "abbrev": "Tear", 
+    "desc": "+15 Mana", 
+    "id": 4, 
+    "id_str": "Icon_TearOfTheGoddess", 
     "name": "Tear of the Goddess"
-  },
+  }, 
   {
-    "id": 5,
+    "abbrev": "Vest", 
+    "desc": "+25 Armor", 
+    "id": 5, 
+    "id_str": "TFT_Item_ChainVest", 
     "name": "Chain Vest"
-  },
+  }, 
   {
-    "id": 6,
+    "abbrev": "Cloak", 
+    "desc": "+25 Magic Resist", 
+    "id": 6, 
+    "id_str": "TFT_Item_NegatronCloak", 
     "name": "Negatron Cloak"
-  },
+  }, 
   {
-    "id": 7,
+    "abbrev": "Belt", 
+    "desc": "+200 Health", 
+    "id": 7, 
+    "id_str": "Icon_GiantsBelt", 
     "name": "Giant's Belt"
-  },
+  }, 
   {
-    "id": 8,
+    "abbrev": "Spatula", 
+    "desc": "It must do <i>something</i>...", 
+    "id": 8, 
+    "id_str": "TFT_Item_Spatula", 
     "name": "Spatula"
-  },
+  }, 
   {
-    "id": 9,
+    "abbrev": "Glove", 
+    "desc": "+10% Critical Strike Chance<br>+10% Dodge Chance", 
+    "id": 9, 
+    "id_str": "TFT_Item_SparringGloves", 
     "name": "Sparring Gloves"
-  },
+  }, 
   {
-    "id": 11,
+    "abbrev": "DB", 
+    "components": [
+      1, 
+      1
+    ], 
+    "desc": "Contributing to a kill grants +30 Attack Damage for the remainder of combat. This effect can stack any number of times (starting at 0).", 
+    "id": 11, 
+    "id_str": "TFT_Item_DeathBlade", 
     "name": "Deathblade"
-  },
+  }, 
   {
-    "id": 12,
+    "abbrev": "GS", 
+    "components": [
+      1, 
+      2
+    ], 
+    "desc": "The wearer's Basic Attacks deal an additional 12% of the target's current Health as physical damage.", 
+    "id": 12, 
+    "id_str": "TFT_Item_GiantSlayer", 
     "name": "Giant Slayer"
-  },
+  }, 
   {
-    "id": 13,
+    "abbrev": "HG", 
+    "components": [
+      1, 
+      3
+    ], 
+    "desc": "Basic Attacks and spells heal the wearer for 25% of the damage dealt.", 
+    "id": 13, 
+    "id_str": "TFT_Item_HextechGunblade", 
     "name": "Hextech Gunblade"
-  },
+  }, 
   {
-    "id": 14,
+    "abbrev": "Spear of Shojin", 
+    "components": [
+      1, 
+      4
+    ], 
+    "desc": "After casting their spell, the wearer's Basic Attacks restore 18% of their max Mana on-hit.", 
+    "id": 14, 
+    "id_str": "TFT_Item_SpearOfShojin", 
     "name": "Spear of Shojin"
-  },
+  }, 
   {
-    "id": 15,
+    "abbrev": "GA", 
+    "components": [
+      1, 
+      5
+    ], 
+    "desc": "Prevents the wearer's first death, placing them in stasis instead. After 2 seconds, they return with 400 Health and shed all negative effects.", 
+    "id": 15, 
+    "id_str": "TFT_Item_GuardianAngel", 
     "name": "Guardian Angel"
-  },
+  }, 
   {
-    "id": 16,
+    "abbrev": "BT", 
+    "components": [
+      1, 
+      6
+    ], 
+    "desc": "Basic Attacks heal the wearer for 35% of the damage dealt.", 
+    "id": 16, 
+    "id_str": "TFT_Item_Bloodthirster", 
     "name": "Bloodthirster"
-  },
+  }, 
   {
-    "id": 17,
+    "abbrev": "Zekes", 
+    "components": [
+      1, 
+      7
+    ], 
+    "desc": "When combat begins, the wearer and all allies within 1 hexes in the same row gain +30% Attack Speed for the rest of combat.", 
+    "id": 17, 
+    "id_str": "TFT_Item_ZekesHerald", 
     "name": "Zeke's Herald"
-  },
+  }, 
   {
-    "id": 18,
+    "abbrev": "Blade of the Ruined King", 
+    "components": [
+      1, 
+      8
+    ], 
+    "desc": "The wearer gains the Blademaster trait. [Unique - Only One Per Champion]", 
+    "id": 18, 
+    "id_str": "TFT3_Item_Blademaster", 
     "name": "Blade of the Ruined King"
-  },
+  }, 
   {
-    "id": 19,
+    "abbrev": "IE", 
+    "components": [
+      1, 
+      9
+    ], 
+    "desc": "Grants +100% Critical Strike Damage.", 
+    "id": 19, 
+    "id_str": "TFT_Item_InfinityEdge", 
     "name": "Infinity Edge"
-  },
+  }, 
   {
-    "id": 22,
+    "abbrev": "RFC", 
+    "components": [
+      2, 
+      2
+    ], 
+    "desc": "Gain 200% Attack Range.", 
+    "id": 22, 
+    "id_str": "TFT_Item_RapidFirecannon", 
     "name": "Rapid Firecannon"
-  },
+  }, 
   {
-    "id": 23,
+    "abbrev": "GRB", 
+    "components": [
+      2, 
+      3
+    ], 
+    "desc": "Basic Attacks grant +5% bonus Attack Speed for the rest of combat. This effect can stack any number of times.", 
+    "id": 23, 
+    "id_str": "TFT_Item_GuinsoosRageblade", 
     "name": "Guinsoo's Rageblade"
-  },
+  }, 
   {
-    "id": 24,
+    "abbrev": "Shiv", 
+    "components": [
+      2, 
+      4
+    ], 
+    "desc": "Every third Basic Attack from the wearer deals 80 magic damage to 3/4/5 enemies.", 
+    "id": 24, 
+    "id_str": "TFT_Item_StatikkShiv", 
     "name": "Statikk Shiv"
-  },
+  }, 
   {
-    "id": 25,
+    "abbrev": "TR", 
+    "components": [
+      2, 
+      5
+    ], 
+    "desc": "When the wearer takes damage or inflicts a critical hit, they gain a 2% stacking damage bonus. Stacks up to 50 times, at which point the wearer gains 25 Armor and Magic Resistance, and increases in size.", 
+    "id": 25, 
+    "id_str": "TFT_Item_TitansResolve.TFT_1001_ItemsUpdate", 
     "name": "Titan's Resolve"
-  },
+  }, 
   {
-    "id": 26,
+    "abbrev": "RH", 
+    "components": [
+      2, 
+      6
+    ], 
+    "desc": "Basic Attacks fire a bolt at another nearby enemy, dealing 70% of the wearer's Attack Damage and applying on-hit effects.", 
+    "id": 26, 
+    "id_str": "TFT_Item_RunaansHurricane", 
     "name": "Runaan's Hurricane"
-  },
+  }, 
   {
-    "id": 27,
+    "abbrev": "ZzR", 
+    "components": [
+      2, 
+      7
+    ], 
+    "desc": "When the wearer dies, a Construct with 1000/2000/3000 Health arises to continue the fight.", 
+    "id": 27, 
+    "id_str": "TFT_Item_Zzrot_Portal", 
     "name": "Zz'Rot Portal"
-  },
+  }, 
   {
-    "id": 28,
+    "abbrev": "Infiltrator's Talons", 
+    "components": [
+      2, 
+      8
+    ], 
+    "desc": "The wearer gains the Infiltrator trait. [Unique - Only One Per Champion]", 
+    "id": 28, 
+    "id_str": "TFT3_Item_Infiltrator", 
     "name": "Infiltrator's Talons"
-  },
+  }, 
   {
-    "id": 29,
+    "abbrev": "LW", 
+    "components": [
+      2, 
+      9
+    ], 
+    "desc": "When the wearer inflicts a critical hit, the target's Armor is reduced by 90% for 3 seconds. This effect does not stack. [Unique - Only One Per Champion]", 
+    "id": 29, 
+    "id_str": "TFT_Item_MortalReminder", 
     "name": "Last Whisper"
-  },
+  }, 
   {
-    "id": 33,
+    "abbrev": "DCap", 
+    "components": [
+      3, 
+      3
+    ], 
+    "desc": "Grants +50% Spell Power Amplification. (All sources of Spell Power are 50% more effective)", 
+    "id": 33, 
+    "id_str": "TFT_Item_RabadonsDeathcap", 
     "name": "Rabadon's Deathcap"
-  },
+  }, 
   {
-    "id": 34,
+    "abbrev": "Luden's Echo", 
+    "components": [
+      3, 
+      4
+    ], 
+    "desc": "When the wearer casts their spell, the first target dealt magic damage and up to 3 nearby enemies are dealt an additional 150/175/225 magic damage.", 
+    "id": 34, 
+    "id_str": "TFT_Item_LudensEcho", 
     "name": "Luden's Echo"
-  },
+  }, 
   {
-    "id": 35,
+    "abbrev": "Locket", 
+    "components": [
+      3, 
+      5
+    ], 
+    "desc": "When combat begins, the wearer and all allies within 2 hexes in the same row gain a shield that blocks 250/275/350 damage for 8 seconds.", 
+    "id": 35, 
+    "id_str": "TFT_Item_LocketOfTheIronSolari", 
     "name": "Locket of the Iron Solari"
-  },
+  }, 
   {
-    "id": 36,
+    "abbrev": "Spark", 
+    "components": [
+      3, 
+      6
+    ], 
+    "desc": "Enemies within 2 hexes have their Magic Resist reduced by 50% (does not stack). When they cast a spell, they are zapped taking magic damage equal to 225% of their max Mana.", 
+    "id": 36, 
+    "id_str": "TFT_Item_IonicSpark", 
     "name": "Ionic Spark"
-  },
+  }, 
   {
-    "id": 37,
+    "abbrev": "Morello", 
+    "components": [
+      3, 
+      7
+    ], 
+    "desc": "When the wearer deals damage with their spell, they burn the target, dealing 27% of the target's Maximum Health as true damage over 10 seconds and reducing healing by 50% for the duration of the burn. [Unique - Only One Per Champion]", 
+    "id": 37, 
+    "id_str": "TFT_Item_Morellonomicon", 
     "name": "Morellonomicon"
-  },
+  }, 
   {
-    "id": 38,
+    "abbrev": "Demolitionist's Charge", 
+    "components": [
+      3, 
+      8
+    ], 
+    "desc": "The wearer gains the Demolitionist trait. [Unique - Only One Per Champion]", 
+    "id": 38, 
+    "id_str": "TFT3_Item_Demolitionist", 
     "name": "Demolitionist's Charge"
-  },
+  }, 
   {
-    "id": 39,
+    "abbrev": "JG", 
+    "components": [
+      3, 
+      9
+    ], 
+    "desc": "Your spells can inflict critical hits. [Unique - Only One Per Champion]", 
+    "id": 39, 
+    "id_str": "TFT_Item_Jeweled_Gauntlet", 
     "name": "Jeweled Gauntlet"
-  },
+  }, 
   {
-    "id": 44,
+    "abbrev": "Seraph", 
+    "components": [
+      4, 
+      4
+    ], 
+    "desc": "After casting their spell, the wearer gains 20 Mana.", 
+    "id": 44, 
+    "id_str": "TFT_Item_SeraphsEmbrace", 
     "name": "Seraph's Embrace"
-  },
+  }, 
   {
-    "id": 45,
+    "abbrev": "FH", 
+    "components": [
+      4, 
+      5
+    ], 
+    "desc": "Reduces the Attack Speed of nearby enemies by 50%. Each Frozen Heart a champion carries beyond the first increases the radius of this effect.", 
+    "id": 45, 
+    "id_str": "TFT_Item_FrozenHeart", 
     "name": "Frozen Heart"
-  },
+  }, 
   {
-    "id": 46,
+    "abbrev": "Chalice", 
+    "components": [
+      4, 
+      6
+    ], 
+    "desc": "When the wearer casts a spell, restores 10 mana to allies within 2 hexes (including themself).", 
+    "id": 46, 
+    "id_str": "TFT_Item_Chalice3.TFT_Set3", 
     "name": "Chalice of Favor"
-  },
+  }, 
   {
-    "id": 47,
+    "abbrev": "Redemption", 
+    "components": [
+      4, 
+      7
+    ], 
+    "desc": "When the wearer dies, allies are healed for 800 Health.", 
+    "id": 47, 
+    "id_str": "TFT_Item_Redemption", 
     "name": "Redemption"
-  },
+  }, 
   {
-    "id": 48,
+    "abbrev": "Star Guardian's Charm", 
+    "components": [
+      4, 
+      8
+    ], 
+    "desc": "The wearer gains the Star Guardian trait. [Unique - Only One Per Champion]", 
+    "id": 48, 
+    "id_str": "TFT3_Item_StarGuardian", 
     "name": "Star Guardian's Charm"
-  },
+  }, 
   {
-    "id": 49,
+    "abbrev": "HoJ", 
+    "components": [
+      4, 
+      9
+    ], 
+    "desc": "At the beginning of each planning phase, the wearer gains one of the following:<li>Basic attacks and spells deal +50% Damage</li> <li>Basic attacks heal 50 Health on-hit</li>", 
+    "id": 49, 
+    "id_str": "TFT_Item_HandOfJustice", 
     "name": "Hand Of Justice"
-  },
+  }, 
   {
-    "id": 55,
+    "abbrev": "BV", 
+    "components": [
+      5, 
+      5
+    ], 
+    "desc": "Negates bonus damage from incoming critical hits. On being hit by a Basic Attack, deal 100/140/200 magic damage to all nearby enemies (once every 3 seconds).", 
+    "id": 55, 
+    "id_str": "TFT_Item_BrambleVest.TFT_1001_ItemsUpdate", 
     "name": "Bramble Vest"
-  },
+  }, 
   {
-    "id": 56,
+    "abbrev": "Sword Breaker", 
+    "components": [
+      5, 
+      6
+    ], 
+    "desc": "The wearer's Basic Attacks have a 25% chance to disarm the target for 3 seconds, preventing that enemy from making Basic Attacks.", 
+    "id": 56, 
+    "id_str": "TFT_Item_SwordBreaker", 
     "name": "Sword Breaker"
-  },
+  }, 
   {
-    "id": 57,
+    "abbrev": "Red", 
+    "components": [
+      5, 
+      7
+    ], 
+    "desc": "Wearer's Basic Attacks burn the target on-hit, dealing 27% of the target's Maximum Health as true damage over 10 seconds and reducing healing by 50% for the duration of the burn. [Unique - Only One Per Champion]", 
+    "id": 57, 
+    "id_str": "TFT_Item_RedBuff", 
     "name": "Red Buff"
-  },
+  }, 
   {
-    "id": 58,
+    "abbrev": "Rebel Medal", 
+    "components": [
+      5, 
+      8
+    ], 
+    "desc": "The wearer gains the Rebel trait. [Unique - Only One Per Champion]", 
+    "id": 58, 
+    "id_str": "TFT3_Item_Rebel", 
     "name": "Rebel Medal"
-  },
+  }, 
   {
-    "id": 59,
+    "abbrev": "Shroud of Stillness", 
+    "components": [
+      5, 
+      9
+    ], 
+    "desc": "When combat begins, shoots a beam straight ahead that delays affected enemies' first spellcast, increasing their max Mana by 40% until they cast. [Unique - Only One Per Champion]", 
+    "id": 59, 
+    "id_str": "TFT_Item_Shroud.TFT_Set3", 
     "name": "Shroud of Stillness"
-  },
+  }, 
   {
-    "id": 66,
+    "abbrev": "DClaw", 
+    "components": [
+      6, 
+      6
+    ], 
+    "desc": "Reduces incoming magic damage by 50%.", 
+    "id": 66, 
+    "id_str": "TFT_Item_DragonsClaw", 
     "name": "Dragon's Claw"
-  },
+  }, 
   {
-    "id": 67,
+    "abbrev": "Zephyr", 
+    "components": [
+      6, 
+      7
+    ], 
+    "desc": "When combat begins, the wearer summons a whirlwind on the opposite side of the arena that removes the closest enemy from combat for 5 seconds. [Unique - Only One Per Champion]", 
+    "id": 67, 
+    "id_str": "TFT_Item_Zephyr", 
     "name": "Zephyr"
-  },
+  }, 
   {
-    "id": 68,
+    "abbrev": "Talisman of Light", 
+    "components": [
+      6, 
+      8
+    ], 
+    "desc": "The wearer gains the Celestial trait. [Unique - Only One Per Champion]", 
+    "id": 68, 
+    "id_str": "TFT3_Item_Celestial", 
     "name": "Celestial Orb"
-  },
+  }, 
   {
-    "id": 69,
+    "abbrev": "QSS", 
+    "components": [
+      6, 
+      9
+    ], 
+    "desc": "The wearer is immune to crowd control for the first 15 seconds of combat. [Unique - Only One Per Champion]", 
+    "id": 69, 
+    "id_str": "TFT_Item_Mercurial", 
     "name": "Quicksilver"
-  },
+  }, 
   {
-    "id": 77,
+    "abbrev": "WM", 
+    "components": [
+      7, 
+      7
+    ], 
+    "desc": "The wearer regenerates 5% of their missing Health, but not more than 150, per second.", 
+    "id": 77, 
+    "id_str": "TFT_Item_WarmogsArmor", 
     "name": "Warmog's Armor"
-  },
+  }, 
   {
-    "id": 78,
+    "abbrev": "Protector's Chestguard", 
+    "components": [
+      7, 
+      8
+    ], 
+    "desc": "The wearer gains the Protector trait. [Unique - Only One Per Champion]", 
+    "id": 78, 
+    "id_str": "TFT3_Item_Protector", 
     "name": "Protector's Chestguard"
-  },
+  }, 
   {
-    "id": 79,
+    "abbrev": "TClaw", 
+    "components": [
+      7, 
+      9
+    ], 
+    "desc": "Blocks the first enemy spell that hits the wearer, and stuns the spell's caster for 4 seconds.", 
+    "id": 79, 
+    "id_str": "TFT_Item_Backhand", 
     "name": "Trap Claw"
-  },
+  }, 
   {
-    "id": 88,
+    "abbrev": "Force of Nature", 
+    "components": [
+      8, 
+      8
+    ], 
+    "desc": "Wearer's team gains +1 maximum team size.", 
+    "id": 88, 
+    "id_str": "TFT_Item_ForceOfNature", 
     "name": "Force of Nature"
-  },
+  }, 
   {
-    "id": 89,
+    "abbrev": "Dark Star's Heart", 
+    "components": [
+      8, 
+      9
+    ], 
+    "desc": "The wearer gains the Dark Star trait. [Unique - Only One Per Champion]", 
+    "id": 89, 
+    "id_str": "TFT3_Item_DarkStar", 
     "name": "Dark Star's Heart"
-  },
+  }, 
   {
-    "id": 99,
+    "abbrev": "TG", 
+    "components": [
+      9, 
+      9
+    ], 
+    "desc": "At the beginning of each planning phase, the wearer equips 2 temporary items. Temporary items increase in power based on your player level. [Consumes Three Item Slots]", 
+    "id": 99, 
+    "id_str": "TFT_Item_ThiefsGloves", 
     "name": "Thief's Gloves"
+  }, 
+  {
+    "abbrev": "Spatula", 
+    "desc": "It must do <i>something</i>...", 
+    "id": 100, 
+    "id_str": "TFT_Item_Unknown", 
+    "name": "Spatula"
+  }, 
+  {
+    "abbrev": "Neeko's Help", 
+    "desc": "Place on a champion to create a one-star copy of them. [CONSUMABLE - This item disappears when used.]", 
+    "id": 200, 
+    "id_str": "TFT_Blessing_WildCard", 
+    "name": "Neeko's Help"
   }
 ]

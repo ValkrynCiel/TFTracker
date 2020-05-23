@@ -52,7 +52,8 @@ export default class Partipant extends Component {
         if (props.num < 5) return '#2473f2';
         return '#bac4d4'
       }};
-      margin: auto;
+      margin: 5px auto;
+      font-weight: 700;
     `
     let ranking;
 
@@ -93,10 +94,8 @@ export default class Partipant extends Component {
     return (
       <tr>
         <TD>
-          {this.toCardinal(placement)}
-        </TD>
-        <TD>
           <StyledLink to={`/na/summoner/${name}`}>
+            {this.toCardinal(placement)}
             <ProfileImg src = {`https://cdn.communitydragon.org/latest/profile-icon/${profileIconId}`} />
             <div>{name}</div>
           </StyledLink>

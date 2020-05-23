@@ -29,7 +29,7 @@ export default class Match extends Component {
   }
 
   async componentDidMount() {
-    let { details, datetime } = this.props;
+    let { datetime } = this.props;
     this.timerId = setInterval(() => {
       this.setState({
         timeFromNow: moment(new Date(datetime)).fromNow()
@@ -46,6 +46,7 @@ export default class Match extends Component {
       }};
       text-align: left;
       margin-top: 0px;
+      font-weight: 700;
     `
     let ranking;
 

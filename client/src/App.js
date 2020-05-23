@@ -6,6 +6,7 @@ import './App.css';
 
 function App() {
   return (
+    <>
       <div className="App">
         <BrowserRouter>
           <Switch>
@@ -22,6 +23,9 @@ function App() {
           </Switch>
         </BrowserRouter>
       </div>
+      <div className="background">
+      </div>
+    </>
   );
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table } from '../../components/Table';
+import { TH } from '../../components/TH';
 import Match from '../Match'
 
 export const MatchHistory = (props)=> {
@@ -8,9 +9,9 @@ export const MatchHistory = (props)=> {
     <Table>
       <thead>
         <tr>
-          <th colSpan="4">
+          <TH colSpan="4">
             <span>Recent Games</span>
-          </th>
+          </TH>
         </tr>
       </thead>
       <tbody>

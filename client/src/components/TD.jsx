@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const TD = styled.td`
-  padding: 7px 15px;
+  padding: 10px 15px;
   &.units {
     width: 300px;
     text-align: left;

@@ -1,35 +1,20 @@
 import React from 'react';
 import { Table } from '../../components/Table';
+import { TH } from '../../components/TH';
 import Participant from '../Participant';
 
 export const MatchDetails = (props)=> {
 
   return (
-    <>
     <Table>
       <thead>
         <tr>
-          <th>
-            <span>Ranking</span>
-          </th>
-          <th>
-            <span>Summoner</span>
-          </th>
-          <th>
-            <span>Last Round</span>
-          </th>
-          <th>
-            <span>Level</span>
-          </th>
-          <th>
-            <span>Units</span>
-          </th>
-          <th>
-            <span>Traits</span>
-          </th>
-          <th>
-            <span>Gold Left</span>
-          </th>
+          <TH>Summoner</TH>
+          <TH>Last Round</TH>
+          <TH>Level</TH>
+          <TH>Units</TH>
+          <TH>Traits</TH>
+          <TH>Gold Left</TH>
         </tr>
       </thead>
       <tbody>
@@ -40,6 +25,5 @@ export const MatchDetails = (props)=> {
         )}
       </tbody>
     </Table>
-    </>
   )
 }

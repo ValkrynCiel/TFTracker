@@ -6,14 +6,15 @@ const Wrapper = styled.div`
   max-width: 400px;
   width: 90%;
   margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
 `
 const Title = styled.div`
-  border: 2px solid #ddd;
   font-size: 15px;
-  color: #777;
+  color: rgb(121, 134, 163);
   text-align: center;
   padding: 7px;
-  background-color: #eee;
+  background-image: linear-gradient(to top, rgb(39, 54, 82) 0%, rgb(32, 43, 67) 100%);
 `
 const Details = styled.div`
   height: 200px;
@@ -23,7 +24,7 @@ const Details = styled.div`
   flex-direction: row;
   text-align: left;
   justify-content: space-around;
-  background-color: #fafafa;
+  background-color: #202B43;
 `;
 
 const Img = styled.img`
