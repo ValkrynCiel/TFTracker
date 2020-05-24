@@ -36,7 +36,7 @@ export const ChampionThumbnail = (props) => {
     <Wrapper>
       <ChampionContainer>
         {tier > 1 ? <StarLevel src={require(`../../assets/tft-star-${tier}.png`)} /> : null}
-        <Champion src={require(`../../assets/set3/champions/${championName}.png`)} rarity={rarity} alt="product" />
+        <Champion src={require(`../../assets/set3/champions/${championName}.png`)} rarity={rarity} alt="product" id={id}/>
       </ChampionContainer>
       <ItemContainer>
         {items.map((id, i) => <Item key={i} id={id} />)}

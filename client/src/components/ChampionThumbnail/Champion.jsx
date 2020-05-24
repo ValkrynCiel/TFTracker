@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { StyledLink } from '../StyledLink';
 
 const colors = {
   0: "#BBBBBB",
@@ -20,6 +21,8 @@ const Img = styled.img`
 
 export const Champion = (props) => {
   return (
-    <Img rarity={props.rarity} src={props.src} />
+    <StyledLink to={`/champions/${props.id}`}>
+      <Img rarity={props.rarity} src={props.src} />
+    </StyledLink>
   );
 }

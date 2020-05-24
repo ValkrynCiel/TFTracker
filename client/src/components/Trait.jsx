@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import background from '../assets/set3/traits/bg.png';
+import traits from '../assets/set3/traits.json';
+import {StyledLink} from './StyledLink';
 
 const Wrapper = styled.div`
   background-image: url(${background});
@@ -43,9 +45,11 @@ const UnitCount = styled.div`
 export const Trait = (props) => {
   let fileName = props.name.replace('Set3_', '').toLowerCase();
   return (
-    <Wrapper rank={ props.rank }>
-      <img src= { require(`../assets/set3/traits/${fileName}.png`) }/>
-      <UnitCount><p>{props.num}</p></UnitCount>
-    </Wrapper>
+    <StyledLink to={`/traits/${props.name}`}>
+      <Wrapper rank={ props.rank }>
+        <img src= { require(`../assets/set3/traits/${fileName}.png`) }/>
+        <UnitCount><p>{props.num}</p></UnitCount>
+      </Wrapper>
+    </StyledLink>
   )
 }

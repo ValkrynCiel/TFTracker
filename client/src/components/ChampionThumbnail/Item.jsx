@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import items from '../../assets/set3/items.json';
+import { StyledLink } from '../StyledLink';
 
 const Img = styled.img`
   display: block;
@@ -9,9 +11,12 @@ const Img = styled.img`
 `
 
 export const Item = (props) => {
-  let id = props.id > 10 ? `${props.id}` : `0${props.id}`;
+  let fileName = props.id > 10 ? `${props.id}` : `0${props.id}`;
+
   return (
-    <Img src={require(`../../assets/set3/items/${id}.png`)} />
+    <StyledLink to={`/items/${props.id}`}>
+      <Img src={require(`../../assets/set3/items/${fileName}.png`)} />
+    </StyledLink>
   )
 }
 

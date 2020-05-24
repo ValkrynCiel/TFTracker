@@ -7,6 +7,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      <div className="background" />
       <div className="view">
         <BrowserRouter>
           <Switch>
@@ -19,11 +20,10 @@ function App() {
             <Route exact path='/champions'
                   render={() => <h1>Champion information</h1>} />
             <Route exact path='/' render={() => <h1>HOME</h1>} />
-            <Redirect to='/' />
+            {/* <Redirect to='/' /> */}
           </Switch>
         </BrowserRouter>
       </div>
-      <div className="background" />
     </div>
   );
 }
