@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {formatEndpoint, formatTier} from './helper';
+import {formatEndpoint, formatRank} from './helper';
 
 const Wrapper = styled.div`
   max-width: 400px;
@@ -36,26 +36,31 @@ const Img = styled.img`
 
 
 export const RankedDetails = (props) => {
-  let tier = props.tier.toLowerCase();
   let {
     rank, 
-    wins, 
-    losses, 
-    leaguePoints
+    wins,
+    losses,
+    leaguePoints,
+    tier, 
   } = props;
 
-  let endpoint = formatEndpoint(tier, rank);
+  tier = tier ? tier.toLowerCase() : 'unranked';
 
+  let endpoint = formatEndpoint(tier, rank);
+  debugger
   return (
     <Wrapper>
       <Title><b>Ranked Statistics</b></Title>
       <Details>
         <Img src={require(`../../../assets/ranks/${endpoint}`)} />
         <div className='text'>
-          <h1>{`${formatTier(tier)} ${rank}`}</h1>
-          <h4>LP: {leaguePoints}</h4>
-          <span>Top 1: {wins}</span><br/>
-          <span>Games Played: {wins+losses}</span>
+          <h1>{`${formatRank(tier, rank)}`}</h1>
+          {tier === 'unranked' ? null :
+            <>
+              <h4>LP: {leaguePoints}</h4>
+              <span>Top 1: {wins}</span><br/>
+              <span>Games Played: {wins+losses}</span> 
+            </>}
         </div>
       </Details>
     </Wrapper>
