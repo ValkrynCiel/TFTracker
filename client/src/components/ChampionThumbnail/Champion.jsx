@@ -14,8 +14,7 @@ const Img = styled.img`
   display: block;
   max-width: 100%;
   position: relative;
-  border-radius: 7px;
-  border: ${props => `3px solid ${colors[props.rarity]}`};
+  border: ${props => `2px solid ${colors[props.rarity]}`};
   box-sizing: border-box;
 `
 

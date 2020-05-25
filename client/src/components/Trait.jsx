@@ -27,10 +27,9 @@ const Wrapper = styled.div`
 
 const UnitCount = styled.div`
   position: absolute;
-  height: 15px;
-  width: 15px;
+  height: 18px;
+  width: 18px;
   border-radius: 50%;
-  border: 2px solid black;
   right: -5px;
   bottom: -5px;
   font-size: 12px;

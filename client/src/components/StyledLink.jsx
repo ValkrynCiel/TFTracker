@@ -11,7 +11,7 @@ const floatRight = keyframes`
 `
 
 const animation = css`
-  animation: .75s ${floatRight} ease-out forwards`
+  animation: .5s ${floatRight} ease-out forwards`
 
 
 export const StyledLink = styled(Link)`

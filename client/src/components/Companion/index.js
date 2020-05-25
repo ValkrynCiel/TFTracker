@@ -15,8 +15,8 @@ const Level = styled.div`
   background-color: #3d3b36;
   color: #d6b24d;
   font-size: 13px;
-  height: 18px;
-  width: 18px;
+  height: 20px;
+  width: 20px;
   border-radius: 50%;
   text-align: center;
   border: 2px solid #d6b24d;
@@ -28,8 +28,8 @@ const Level = styled.div`
 `
 
 const Avatar = styled.div`
-  height: 50px;
-  width: 50px;
+  height: 54px;
+  width: 54px;
   position: relative;
   border: #3d3b36 solid 2px;
   border-radius: 50%;
